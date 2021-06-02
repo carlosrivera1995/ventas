@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ventas
+namespace win.rentas
 {
     public partial class Form1 : Form
     {
@@ -17,9 +17,9 @@ namespace ventas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Piensa sueña cree y atrevete Mundo");
+
         }
     }
 }
