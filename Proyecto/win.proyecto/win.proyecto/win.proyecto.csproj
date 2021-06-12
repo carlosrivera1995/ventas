@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formclient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formclient.Designer.cs">
+      <DependentUpon>Formclient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formant.Designer.cs">
+      <DependentUpon>Formant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formconta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formconta.Designer.cs">
+      <DependentUpon>Formconta.cs</DependentUpon>
+    </Compile>
     <Compile Include="formmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,14 +76,35 @@
     <Compile Include="formlogin.Designer.cs">
       <DependentUpon>formlogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formplanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formplanilla.Designer.cs">
+      <DependentUpon>Formplanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formprod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formprod.Designer.cs">
+      <DependentUpon>Formprod.cs</DependentUpon>
+    </Compile>
     <Compile Include="formproductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formproductos.Designer.cs">
       <DependentUpon>formproductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formtrandia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formtrandia.Designer.cs">
+      <DependentUpon>Formtrandia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formclient.resx">
+      <DependentUpon>Formclient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formlogin.resx">
       <DependentUpon>formlogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logotipo-de-la-herramienta-electrica-2bhcd6y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL.proyecto\BL.proyecto.csproj">
+      <Project>{8b3b9570-949c-4c04-9bb4-ec812b64818d}</Project>
+      <Name>BL.proyecto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

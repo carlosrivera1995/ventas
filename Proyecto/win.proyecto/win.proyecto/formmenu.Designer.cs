@@ -37,9 +37,14 @@
             this.reporteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioDeSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaccionesDelDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesContabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesDePlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +53,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.reporteriaToolStripMenuItem,
+            this.transaccionesToolStripMenuItem,
+            this.reportesToolStripMenuItem,
             this.seguridadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -95,29 +102,24 @@
             // 
             this.reporteriaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteProductosToolStripMenuItem,
-            this.reporteClientesToolStripMenuItem,
-            this.reporteProveedoresToolStripMenuItem});
+            this.reporteClientesToolStripMenuItem});
             this.reporteriaToolStripMenuItem.Name = "reporteriaToolStripMenuItem";
-            this.reporteriaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.reporteriaToolStripMenuItem.Text = "Reporteria";
+            this.reporteriaToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.reporteriaToolStripMenuItem.Text = "Formulario";
             // 
             // reporteProductosToolStripMenuItem
             // 
             this.reporteProductosToolStripMenuItem.Name = "reporteProductosToolStripMenuItem";
-            this.reporteProductosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.reporteProductosToolStripMenuItem.Text = "Reporte Productos";
+            this.reporteProductosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteProductosToolStripMenuItem.Text = "Formulario de Mantenimiento";
+            this.reporteProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteProductosToolStripMenuItem_Click);
             // 
             // reporteClientesToolStripMenuItem
             // 
             this.reporteClientesToolStripMenuItem.Name = "reporteClientesToolStripMenuItem";
-            this.reporteClientesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.reporteClientesToolStripMenuItem.Text = "Reporte Clientes";
-            // 
-            // reporteProveedoresToolStripMenuItem
-            // 
-            this.reporteProveedoresToolStripMenuItem.Name = "reporteProveedoresToolStripMenuItem";
-            this.reporteProveedoresToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.reporteProveedoresToolStripMenuItem.Text = "Reporte Proveedores";
+            this.reporteClientesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteClientesToolStripMenuItem.Text = "Formulario de Cliente";
+            this.reporteClientesToolStripMenuItem.Click += new System.EventHandler(this.reporteClientesToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -133,6 +135,53 @@
             this.inicioDeSesionToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.inicioDeSesionToolStripMenuItem.Text = "Inicio de Sesion";
             this.inicioDeSesionToolStripMenuItem.Click += new System.EventHandler(this.inicioDeSesionToolStripMenuItem_Click);
+            // 
+            // transaccionesToolStripMenuItem
+            // 
+            this.transaccionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.transaccionesDelDiaToolStripMenuItem});
+            this.transaccionesToolStripMenuItem.Name = "transaccionesToolStripMenuItem";
+            this.transaccionesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.transaccionesToolStripMenuItem.Text = "Transacciones";
+            this.transaccionesToolStripMenuItem.Click += new System.EventHandler(this.transaccionesToolStripMenuItem_Click);
+            // 
+            // transaccionesDelDiaToolStripMenuItem
+            // 
+            this.transaccionesDelDiaToolStripMenuItem.Name = "transaccionesDelDiaToolStripMenuItem";
+            this.transaccionesDelDiaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.transaccionesDelDiaToolStripMenuItem.Text = "Transacciones del dia";
+            this.transaccionesDelDiaToolStripMenuItem.Click += new System.EventHandler(this.transaccionesDelDiaToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportesContabilidadToolStripMenuItem,
+            this.reportesDePlanillaToolStripMenuItem,
+            this.reportesProduccionToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reportesContabilidadToolStripMenuItem
+            // 
+            this.reportesContabilidadToolStripMenuItem.Name = "reportesContabilidadToolStripMenuItem";
+            this.reportesContabilidadToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.reportesContabilidadToolStripMenuItem.Text = "Reportes Contabilidad";
+            this.reportesContabilidadToolStripMenuItem.Click += new System.EventHandler(this.reportesContabilidadToolStripMenuItem_Click);
+            // 
+            // reportesDePlanillaToolStripMenuItem
+            // 
+            this.reportesDePlanillaToolStripMenuItem.Name = "reportesDePlanillaToolStripMenuItem";
+            this.reportesDePlanillaToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.reportesDePlanillaToolStripMenuItem.Text = "Reportes de Planilla";
+            this.reportesDePlanillaToolStripMenuItem.Click += new System.EventHandler(this.reportesDePlanillaToolStripMenuItem_Click);
+            // 
+            // reportesProduccionToolStripMenuItem
+            // 
+            this.reportesProduccionToolStripMenuItem.Name = "reportesProduccionToolStripMenuItem";
+            this.reportesProduccionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.reportesProduccionToolStripMenuItem.Text = "Reportes Produccion";
+            this.reportesProduccionToolStripMenuItem.Click += new System.EventHandler(this.reportesProduccionToolStripMenuItem_Click);
             // 
             // formmenu
             // 
@@ -165,9 +214,14 @@
         private System.Windows.Forms.ToolStripMenuItem reporteriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioDeSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transaccionesDelDiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesContabilidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesDePlanillaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesProduccionToolStripMenuItem;
     }
 }
 

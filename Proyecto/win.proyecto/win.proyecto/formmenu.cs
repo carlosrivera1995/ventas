@@ -19,7 +19,8 @@ namespace win.proyecto
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var Formlogin = new formlogin();
+            Formlogin.ShowDialog();
         }
 
         private void inicioDeSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,6 +36,53 @@ namespace win.proyecto
             formproducto.MdiParent = this;
             formproducto.Show();
 
+        }
+
+        private void reporteProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formanten = new Formant();
+            formanten.MdiParent = this;
+            formanten.Show();
+        }
+
+        private void transaccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formclientes = new Formclient();
+            formclientes.MdiParent = this;
+            formclientes.Show();
+        }
+
+        private void transaccionesDelDiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formtrandiass = new Formtrandia();
+            formtrandiass.MdiParent = this;
+            formtrandiass.Show();
+        }
+
+        private void reportesContabilidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formcontabilidad = new Formconta();
+            formcontabilidad.MdiParent = this;
+            formcontabilidad.Show();
+        }
+
+        private void reportesDePlanillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formplan = new Formplanilla();
+            formplan.MdiParent = this;
+            formplan.Show();
+        }
+
+        private void reportesProduccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formpro = new Formprod();
+            formpro.MdiParent = this;
+            formpro.Show();
         }
     }
 }
