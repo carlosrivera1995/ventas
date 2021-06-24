@@ -30,30 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formant));
+            System.Windows.Forms.Label activoLabel;
+            System.Windows.Forms.Label areaLabel;
+            System.Windows.Forms.Label descripcionLabel;
+            System.Windows.Forms.Label horaLabel;
+            System.Windows.Forms.Label idLabel;
             this.mantenimientoBL_manteniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mantenimientoBL_manteniBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.mantenimientoBL_manteniBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.mantenimientoBL_manteniDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.areaTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.horaTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            activoLabel = new System.Windows.Forms.Label();
+            areaLabel = new System.Windows.Forms.Label();
+            descripcionLabel = new System.Windows.Forms.Label();
+            horaLabel = new System.Windows.Forms.Label();
+            idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBL_manteniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBL_manteniBindingNavigator)).BeginInit();
             this.mantenimientoBL_manteniBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBL_manteniDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mantenimientoBL_manteniBindingSource
@@ -86,9 +94,34 @@
             this.mantenimientoBL_manteniBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mantenimientoBL_manteniBindingNavigator.Name = "mantenimientoBL_manteniBindingNavigator";
             this.mantenimientoBL_manteniBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mantenimientoBL_manteniBindingNavigator.Size = new System.Drawing.Size(796, 25);
+            this.mantenimientoBL_manteniBindingNavigator.Size = new System.Drawing.Size(592, 25);
             this.mantenimientoBL_manteniBindingNavigator.TabIndex = 0;
             this.mantenimientoBL_manteniBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -122,16 +155,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -154,26 +180,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // mantenimientoBL_manteniBindingNavigatorSaveItem
             // 
@@ -184,58 +192,107 @@
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
-            // mantenimientoBL_manteniDataGridView
+            // activoLabel
             // 
-            this.mantenimientoBL_manteniDataGridView.AutoGenerateColumns = false;
-            this.mantenimientoBL_manteniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mantenimientoBL_manteniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewCheckBoxColumn1});
-            this.mantenimientoBL_manteniDataGridView.DataSource = this.mantenimientoBL_manteniBindingSource;
-            this.mantenimientoBL_manteniDataGridView.Location = new System.Drawing.Point(26, 40);
-            this.mantenimientoBL_manteniDataGridView.Name = "mantenimientoBL_manteniDataGridView";
-            this.mantenimientoBL_manteniDataGridView.Size = new System.Drawing.Size(657, 220);
-            this.mantenimientoBL_manteniDataGridView.TabIndex = 1;
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(146, 225);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(39, 13);
+            activoLabel.TabIndex = 1;
+            activoLabel.Text = "activo:";
             // 
-            // dataGridViewTextBoxColumn1
+            // activoCheckBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.mantenimientoBL_manteniBindingSource, "activo", true));
+            this.activoCheckBox.Location = new System.Drawing.Point(216, 220);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.TabIndex = 2;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // areaLabel
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "descripcion";
-            this.dataGridViewTextBoxColumn2.HeaderText = "descripcion";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            areaLabel.AutoSize = true;
+            areaLabel.Location = new System.Drawing.Point(146, 139);
+            areaLabel.Name = "areaLabel";
+            areaLabel.Size = new System.Drawing.Size(32, 13);
+            areaLabel.TabIndex = 3;
+            areaLabel.Text = "Area:";
             // 
-            // dataGridViewTextBoxColumn3
+            // areaTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Area";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Area";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.areaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Area", true));
+            this.areaTextBox.Location = new System.Drawing.Point(216, 136);
+            this.areaTextBox.Name = "areaTextBox";
+            this.areaTextBox.Size = new System.Drawing.Size(192, 20);
+            this.areaTextBox.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn4
+            // descripcionLabel
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Hora";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Hora";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(146, 96);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(64, 13);
+            descripcionLabel.TabIndex = 5;
+            descripcionLabel.Text = "descripcion:";
             // 
-            // dataGridViewCheckBoxColumn1
+            // descripcionTextBox
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(216, 93);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(192, 20);
+            this.descripcionTextBox.TabIndex = 6;
+            // 
+            // horaLabel
+            // 
+            horaLabel.AutoSize = true;
+            horaLabel.Location = new System.Drawing.Point(146, 182);
+            horaLabel.Name = "horaLabel";
+            horaLabel.Size = new System.Drawing.Size(33, 13);
+            horaLabel.TabIndex = 7;
+            horaLabel.Text = "Hora:";
+            // 
+            // horaTextBox
+            // 
+            this.horaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Hora", true));
+            this.horaTextBox.Location = new System.Drawing.Point(216, 179);
+            this.horaTextBox.Name = "horaTextBox";
+            this.horaTextBox.Size = new System.Drawing.Size(192, 20);
+            this.horaTextBox.TabIndex = 8;
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(146, 55);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 9;
+            idLabel.Text = "Id:";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(216, 52);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(192, 20);
+            this.idTextBox.TabIndex = 10;
             // 
             // Formant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 345);
-            this.Controls.Add(this.mantenimientoBL_manteniDataGridView);
+            this.ClientSize = new System.Drawing.Size(592, 345);
+            this.Controls.Add(activoLabel);
+            this.Controls.Add(this.activoCheckBox);
+            this.Controls.Add(areaLabel);
+            this.Controls.Add(this.areaTextBox);
+            this.Controls.Add(descripcionLabel);
+            this.Controls.Add(this.descripcionTextBox);
+            this.Controls.Add(horaLabel);
+            this.Controls.Add(this.horaTextBox);
+            this.Controls.Add(idLabel);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.mantenimientoBL_manteniBindingNavigator);
             this.Name = "Formant";
             this.Text = "Formant";
@@ -243,7 +300,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBL_manteniBindingNavigator)).EndInit();
             this.mantenimientoBL_manteniBindingNavigator.ResumeLayout(false);
             this.mantenimientoBL_manteniBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mantenimientoBL_manteniDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,11 +321,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton mantenimientoBL_manteniBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView mantenimientoBL_manteniDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.CheckBox activoCheckBox;
+        private System.Windows.Forms.TextBox areaTextBox;
+        private System.Windows.Forms.TextBox descripcionTextBox;
+        private System.Windows.Forms.TextBox horaTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
     }
 }
