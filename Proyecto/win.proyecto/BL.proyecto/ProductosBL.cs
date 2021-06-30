@@ -63,6 +63,35 @@ namespace BL.proyecto
         {
             return ListaProductos;
         }
+        public bool Guardarproducto(producto Producto)
+        {
+            if (Producto.Id == 0)
+            {
+                Producto.Id = ListaProductos.Max(item => item.Id) + 1;
+            }
+            return true;
+        } 
+        public void Agregarproducto()
+        {
+            var nuevoproducto = new producto();
+            ListaProductos.Add(nuevoproducto);
+        }
+        public bool Eliminarproducto(int id)
+        {
+            foreach (var Producto in ListaProductos)
+            {
+                if (Producto.Id == id)
+                {
+                    ListaProductos.Remove(Producto);
+                    return true;
+                }
+                    
+
+            }
+
+            return false;
+        }
+
     } 
 
     }

@@ -26,5 +26,44 @@ namespace win.proyecto
         {
 
         }
+
+        private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            listaProductosBindingSource.EndEdit();
+            var Producto =(producto) listaProductosBindingSource.Current;
+
+            var resultado = _productos.Guardarproducto(Producto);
+
+            if (resultado == true)
+            {
+                listaProductosBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error guardando el producto");
+            }
+            
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            _productos.Agregarproducto();
+            listaProductosBindingSource.MoveLast();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32 (idTextBox.Text);
+            var resultado = _productos.Eliminarproducto(id);
+
+            if (resultado == true)
+            {
+                listaProductosBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al eliminar el producto");
+            }
+        }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formant));
             System.Windows.Forms.Label activoLabel;
             System.Windows.Forms.Label areaLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label horaLabel;
             System.Windows.Forms.Label idLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formant));
             this.mantenimientoBL_manteniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mantenimientoBL_manteniBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +54,7 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.horaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -64,16 +65,61 @@
             this.mantenimientoBL_manteniBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(146, 225);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(39, 13);
+            activoLabel.TabIndex = 1;
+            activoLabel.Text = "activo:";
+            // 
+            // areaLabel
+            // 
+            areaLabel.AutoSize = true;
+            areaLabel.Location = new System.Drawing.Point(146, 139);
+            areaLabel.Name = "areaLabel";
+            areaLabel.Size = new System.Drawing.Size(32, 13);
+            areaLabel.TabIndex = 3;
+            areaLabel.Text = "Area:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(146, 96);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(64, 13);
+            descripcionLabel.TabIndex = 5;
+            descripcionLabel.Text = "descripcion:";
+            // 
+            // horaLabel
+            // 
+            horaLabel.AutoSize = true;
+            horaLabel.Location = new System.Drawing.Point(146, 182);
+            horaLabel.Name = "horaLabel";
+            horaLabel.Size = new System.Drawing.Size(33, 13);
+            horaLabel.TabIndex = 7;
+            horaLabel.Text = "Hora:";
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(146, 55);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 9;
+            idLabel.Text = "Id:";
+            // 
             // mantenimientoBL_manteniBindingSource
             // 
             this.mantenimientoBL_manteniBindingSource.DataSource = typeof(BL.proyecto.mantenimientoBL.manteni);
             // 
             // mantenimientoBL_manteniBindingNavigator
             // 
-            this.mantenimientoBL_manteniBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.mantenimientoBL_manteniBindingNavigator.AddNewItem = null;
             this.mantenimientoBL_manteniBindingNavigator.BindingSource = this.mantenimientoBL_manteniBindingSource;
             this.mantenimientoBL_manteniBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.mantenimientoBL_manteniBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.mantenimientoBL_manteniBindingNavigator.DeleteItem = null;
             this.mantenimientoBL_manteniBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -86,7 +132,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.mantenimientoBL_manteniBindingNavigatorSaveItem});
+            this.mantenimientoBL_manteniBindingNavigatorSaveItem,
+            this.toolStripButton1});
             this.mantenimientoBL_manteniBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.mantenimientoBL_manteniBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.mantenimientoBL_manteniBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -186,20 +233,10 @@
             // mantenimientoBL_manteniBindingNavigatorSaveItem
             // 
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.mantenimientoBL_manteniBindingNavigatorSaveItem.Enabled = false;
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("mantenimientoBL_manteniBindingNavigatorSaveItem.Image")));
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Name = "mantenimientoBL_manteniBindingNavigatorSaveItem";
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(146, 225);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(39, 13);
-            activoLabel.TabIndex = 1;
-            activoLabel.Text = "activo:";
             // 
             // activoCheckBox
             // 
@@ -210,15 +247,6 @@
             this.activoCheckBox.TabIndex = 2;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // areaLabel
-            // 
-            areaLabel.AutoSize = true;
-            areaLabel.Location = new System.Drawing.Point(146, 139);
-            areaLabel.Name = "areaLabel";
-            areaLabel.Size = new System.Drawing.Size(32, 13);
-            areaLabel.TabIndex = 3;
-            areaLabel.Text = "Area:";
-            // 
             // areaTextBox
             // 
             this.areaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Area", true));
@@ -226,15 +254,6 @@
             this.areaTextBox.Name = "areaTextBox";
             this.areaTextBox.Size = new System.Drawing.Size(192, 20);
             this.areaTextBox.TabIndex = 4;
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(146, 96);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(64, 13);
-            descripcionLabel.TabIndex = 5;
-            descripcionLabel.Text = "descripcion:";
             // 
             // descripcionTextBox
             // 
@@ -244,15 +263,6 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(192, 20);
             this.descripcionTextBox.TabIndex = 6;
             // 
-            // horaLabel
-            // 
-            horaLabel.AutoSize = true;
-            horaLabel.Location = new System.Drawing.Point(146, 182);
-            horaLabel.Name = "horaLabel";
-            horaLabel.Size = new System.Drawing.Size(33, 13);
-            horaLabel.TabIndex = 7;
-            horaLabel.Text = "Hora:";
-            // 
             // horaTextBox
             // 
             this.horaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Hora", true));
@@ -261,15 +271,6 @@
             this.horaTextBox.Size = new System.Drawing.Size(192, 20);
             this.horaTextBox.TabIndex = 8;
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(146, 55);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 9;
-            idLabel.Text = "Id:";
-            // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Id", true));
@@ -277,6 +278,16 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(192, 20);
             this.idTextBox.TabIndex = 10;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButton1.Text = "Cancelar";
+            this.toolStripButton1.Visible = false;
             // 
             // Formant
             // 
@@ -326,5 +337,6 @@
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox horaTextBox;
         private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
