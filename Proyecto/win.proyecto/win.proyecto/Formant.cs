@@ -21,5 +21,15 @@ namespace win.proyecto
             _mantenimient = new mantenimientoBL();
             mantenimientoBL_manteniBindingSource.DataSource = _mantenimient.obtenermantenimientos();
         }
+
+        private void mantenimientoBL_manteniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            var mantenimiento = mantenimientoBL_manteniBindingSource.Current;
+            //MessageBox.Show(manteni);
+            
+
+
+
+        }
     }
 }

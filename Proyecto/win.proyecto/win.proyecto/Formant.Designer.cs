@@ -37,9 +37,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formant));
             this.mantenimientoBL_manteniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mantenimientoBL_manteniBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -48,13 +46,15 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.mantenimientoBL_manteniBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtoncancelar = new System.Windows.Forms.ToolStripButton();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.areaTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.horaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.mantenimientoBL_manteniBindingNavigatorSaveItem,
-            this.toolStripButton1});
+            this.toolStripButtoncancelar});
             this.mantenimientoBL_manteniBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.mantenimientoBL_manteniBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.mantenimientoBL_manteniBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -145,30 +145,12 @@
             this.mantenimientoBL_manteniBindingNavigator.TabIndex = 0;
             this.mantenimientoBL_manteniBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -230,6 +212,24 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
             // mantenimientoBL_manteniBindingNavigatorSaveItem
             // 
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -237,6 +237,17 @@
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Name = "mantenimientoBL_manteniBindingNavigatorSaveItem";
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.mantenimientoBL_manteniBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.mantenimientoBL_manteniBindingNavigatorSaveItem.Click += new System.EventHandler(this.mantenimientoBL_manteniBindingNavigatorSaveItem_Click);
+            // 
+            // toolStripButtoncancelar
+            // 
+            this.toolStripButtoncancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtoncancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtoncancelar.Image")));
+            this.toolStripButtoncancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtoncancelar.Name = "toolStripButtoncancelar";
+            this.toolStripButtoncancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtoncancelar.Text = "Cancelar";
+            this.toolStripButtoncancelar.Visible = false;
             // 
             // activoCheckBox
             // 
@@ -278,16 +289,6 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(192, 20);
             this.idTextBox.TabIndex = 10;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton1.Text = "Cancelar";
-            this.toolStripButton1.Visible = false;
             // 
             // Formant
             // 
@@ -337,6 +338,6 @@
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox horaTextBox;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtoncancelar;
     }
 }
