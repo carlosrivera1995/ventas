@@ -110,10 +110,6 @@
             idLabel.TabIndex = 9;
             idLabel.Text = "Id:";
             // 
-            // mantenimientoBL_manteniBindingSource
-            // 
-            this.mantenimientoBL_manteniBindingSource.DataSource = typeof(BL.proyecto.mantenimientoBL.manteni);
-            // 
             // mantenimientoBL_manteniBindingNavigator
             // 
             this.mantenimientoBL_manteniBindingNavigator.AddNewItem = null;
@@ -220,6 +216,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -229,6 +226,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click_1);
             // 
             // mantenimientoBL_manteniBindingNavigatorSaveItem
             // 

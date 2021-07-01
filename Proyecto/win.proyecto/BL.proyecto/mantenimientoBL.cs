@@ -49,7 +49,40 @@ namespace BL.proyecto
             return Listamantenimientos;
 
         }
-        public class manteni
+        public bool Guardarmantenimiento(manteni mantenimiento)
+        {
+            if (mantenimiento.Id == 0)
+            {
+                mantenimiento.Id = Listamantenimientos.Max(item => item.Id) + 1;
+            }
+            return true;
+        }
+        public void Agregarmantenimiento()
+        {
+            var nuevomanteni = new manteni();
+            Listamantenimientos.Add(nuevomanteni);
+        }
+
+
+
+        public bool Eliminarmantenimiento(int id)
+        {
+            foreach (var mantenimiento in Listamantenimientos)
+            {
+                if (mantenimiento.Id == id)
+                {
+                    Listamantenimientos.Remove(mantenimiento);
+                    return true;
+                }
+
+
+            }
+            return false;
+        }
+    }
+}
+
+public class manteni
         {
             public int Id { get; set; }
             public string descripcion { get; set; }
@@ -57,5 +90,3 @@ namespace BL.proyecto
             public int Hora { get; set; }
             public bool activo { get; set; }
         }
-    }
-}
