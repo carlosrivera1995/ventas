@@ -28,17 +28,18 @@ namespace win.proyecto
         private void mantenimientoBL_manteniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             mantenimientoBL_manteniBindingSource.EndEdit();
-            var mantenimiento = (manteni)mantenimientoBL_manteniBindingSource.Current;
+            var mantenimiento = (Manteni)mantenimientoBL_manteniBindingSource.Current;
 
             var resultado = _mantenimient.Guardarmantenimiento(mantenimiento);
 
-            if (resultado == true)
+            if (resultado.Exitoso == true)
             {
                 mantenimientoBL_manteniBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
             }
             else
             {
-                MessageBox.Show("Ocurrio un error guardando el mantenimiento");
+                MessageBox.Show(resultado.Mensaje);
             }
         }
 
@@ -48,17 +49,45 @@ namespace win.proyecto
         {
             _mantenimient.Agregarmantenimiento();
             mantenimientoBL_manteniBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
         }
 
+        private void DeshabilitarHabilitarBotones(bool Valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = Valor;
+            bindingNavigatorMoveLastItem.Enabled = Valor;
+            bindingNavigatorMovePreviousItem.Enabled = Valor;
+            bindingNavigatorMoveNextItem.Enabled = Valor;
+            bindingNavigatorPositionItem.Enabled = Valor;
 
-
-
-       
+            bindingNavigatorAddNewItem.Enabled = Valor;
+            bindingNavigatorDeleteItem.Enabled = Valor;
+            toolStripButtoncancelar.Visible = !Valor;
+        }
 
         private void bindingNavigatorDeleteItem_Click_1(object sender, EventArgs e)
         {
-            var Id = Convert.ToInt32(idTextBox.Text);
-            var Resultado = _mantenimient.Eliminarmantenimiento(Id);
+            if (idTextBox.Text != "")
+
+            {
+                var resultado = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
+                
+                if (resultado == DialogResult.Yes)
+               {
+                var id = Convert.ToInt32(idTextBox.Text);
+                Eliminar(id);
+                }
+
+            }
+            
+            
+        }
+
+        private void Eliminar(int id)
+        {
+            
+            var Resultado = _mantenimient.Eliminarmantenimiento(id);
 
             if (Resultado == true)
             {
@@ -68,6 +97,12 @@ namespace win.proyecto
             {
                 MessageBox.Show("Ocurrio un error al eliminar el producto");
             }
+        }
+
+        private void toolStripButtoncancelar_Click(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
     }
 }

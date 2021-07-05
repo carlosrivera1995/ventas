@@ -9,7 +9,7 @@ namespace BL.proyecto
 {
     public class ProductosBL
     {
-         public BindingList<producto> ListaProductos {get; set; }
+        public BindingList<producto> ListaProductos { get; set; }
         public ProductosBL()
         {
             ListaProductos = new BindingList<producto>();
@@ -58,49 +58,87 @@ namespace BL.proyecto
             producto5.activo = true;
 
             ListaProductos.Add(producto5);
-        } 
+        }
         public BindingList<producto> obtenerproductos()
         {
             return ListaProductos;
         }
-        public bool Guardarproducto(producto Producto)
+
+        public Resultado GuardarProducto(producto producto)
         {
-            if (Producto.Id == 0)
+            var resultado = Validar(producto);
+            if (resultado.Exitoso == false)
             {
-                Producto.Id = ListaProductos.Max(item => item.Id) + 1;
+                return resultado;
             }
-            return true;
-        } 
-        public void Agregarproducto()
-        {
-            var nuevoproducto = new producto();
-            ListaProductos.Add(nuevoproducto);
-        }
-        public bool Eliminarproducto(int id)
-        {
-            foreach (var Producto in ListaProductos)
+
+            if (producto.Id == 0)
             {
-                if (Producto.Id == id)
+                producto.Id = ListaProductos.Max(item => item.Id) + 1;
+
+            }
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarProducto()
+        {
+            var nuevoProducto = new producto();
+            ListaProductos.Add(nuevoProducto);
+        }
+        public bool EliminarProducto(int id)
+        {
+            foreach (var producto in ListaProductos)
+            {
+                if (producto.Id == id)
                 {
-                    ListaProductos.Remove(Producto);
+                    ListaProductos.Remove(producto);
                     return true;
                 }
-                    
+
+            }
+            return false;
+        }
+        private Resultado Validar(producto producto)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+            if (string.IsNullOrEmpty(producto.descripcion) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripcion";
+                resultado.Exitoso = false;
+
+            }
+            if (producto.existencia < 0)
+            {
+                resultado.Mensaje = "La existencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+
+            }
+            if (producto.precio < 0)
+            {
+                resultado.Mensaje = "El precio debe ser mayor que cero";
+                resultado.Exitoso = false;
 
             }
 
-            return false;
+            return resultado;
         }
-
-    } 
-
-    }
-    public class producto
-    {
-        public int Id { get; set; }
-        public string descripcion { get; set; }
-        public double precio { get; set; }
-        public int existencia { get; set; }
-        public bool activo { get; set; }
     }
 
+
+}
+public class producto
+{
+    public int Id { get; set; }
+    public string descripcion { get; set; }
+    public double precio { get; set; }
+    public int existencia { get; set; }
+    public bool activo { get; set; }
+}
+
+public class Resultado
+{
+    public bool Exitoso { get; set; }
+    public string Mensaje { get; set; }
+}

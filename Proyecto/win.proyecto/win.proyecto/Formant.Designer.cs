@@ -144,8 +144,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
@@ -246,6 +246,7 @@
             this.toolStripButtoncancelar.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtoncancelar.Text = "Cancelar";
             this.toolStripButtoncancelar.Visible = false;
+            this.toolStripButtoncancelar.Click += new System.EventHandler(this.toolStripButtoncancelar_Click);
             // 
             // activoCheckBox
             // 
@@ -285,6 +286,7 @@
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mantenimientoBL_manteniBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(216, 52);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(192, 20);
             this.idTextBox.TabIndex = 10;
             // 
