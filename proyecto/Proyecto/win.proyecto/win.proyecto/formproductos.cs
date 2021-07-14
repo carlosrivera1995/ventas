@@ -1,7 +1,12 @@
 ﻿using BL.proyecto;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace win.proyecto
@@ -30,20 +35,12 @@ namespace win.proyecto
         private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaProductosBindingSource.EndEdit();
-            var Producto = (producto)listaProductosBindingSource.Current;
+            var producto = (producto)listaProductosBindingSource.Current;
 
-            if (fotoPictureBox.Image != null)
+            var resultado = _productos.GuardarProducto(producto);
 
-            {
-                Producto.foto = Program.imagetoByteArray(fotoPictureBox.Image);
-            }
-            else
-            {
-                Producto.foto = null;
-
-            }
-            var resultado = _productos.GuardarProducto(Producto);
             if (resultado.Exitoso == true)
+
             {
                 listaProductosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
@@ -73,7 +70,7 @@ namespace win.proyecto
             bindingNavigatorPositionItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButton1cancelar.Visible = !valor;
-
+           
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -109,7 +106,8 @@ namespace win.proyecto
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
 
         private void idTextBox_TextChanged(object sender, EventArgs e)
@@ -119,41 +117,7 @@ namespace win.proyecto
 
         private void toolStripButton1cancelar_Click(object sender, EventArgs e)
         {
-            DeshabilitarHabilitarBotones(true);
-            Eliminar(0);
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var Producto = (producto)listaProductosBindingSource.Current;
-            
-            if (Producto != null)
-            {
-                openFileDialog1.ShowDialog();
-                var archivo = openFileDialog1.FileName;
-
-                if (archivo != "")
-                {
-                    var fileInfo = new FileInfo(archivo);
-                    var fileStream = fileInfo.OpenRead();
-
-                    fotoPictureBox.Image = Image.FromStream(fileStream);
-
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Cree Un Producto antes de asignar una imagen");
-            }
-
-           
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            fotoPictureBox.Image = null;
         }
     }
 }
