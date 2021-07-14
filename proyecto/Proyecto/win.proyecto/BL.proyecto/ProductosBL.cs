@@ -95,6 +95,7 @@ public class producto
     public string descripcion { get; set; }
     public double precio { get; set; }
     public int existencia { get; set; }
+    public byte[] Foto { get; set; }
     public bool activo { get; set; }
 }
 
