@@ -17,7 +17,10 @@ namespace BL.proyecto
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());
         }
         public DbSet<producto> Productos { get; set; }
+        public DbSet<Tipo> Tipos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

@@ -88,19 +88,22 @@ namespace BL.proyecto
     }
 
 
-}
 public class producto
 {
     public int Id { get; set; }
     public string descripcion { get; set; }
     public double precio { get; set; }
     public int existencia { get; set; }
+    public int TipoId { get; set; }
+    public Tipo Tipo { get; set; }
     public byte[] Foto { get; set; }
     public bool activo { get; set; }
+
+    public producto()
+    {
+        activo = true;
+    }
+  }
 }
 
-public class Resultado
-{
-    public bool Exitoso { get; set; }
-    public string Mensaje { get; set; }
-}
+
