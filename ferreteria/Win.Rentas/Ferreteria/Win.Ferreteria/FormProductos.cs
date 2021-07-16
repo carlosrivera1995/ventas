@@ -33,6 +33,7 @@ namespace Win.Ferreteria
             {
                 listaProductosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto Guardado");
             }
             else
             {
