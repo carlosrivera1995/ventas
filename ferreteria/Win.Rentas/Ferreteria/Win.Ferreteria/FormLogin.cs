@@ -36,6 +36,10 @@ namespace Win.Ferreteria
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
+            button1.Enabled = false;
+            button1.Text = "Verificando...";
+            Application.DoEvents();
+
           var resultado = _seguridad.Autorizar(usuario, contrasena);
 
             if (resultado == true)
@@ -49,6 +53,11 @@ namespace Win.Ferreteria
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

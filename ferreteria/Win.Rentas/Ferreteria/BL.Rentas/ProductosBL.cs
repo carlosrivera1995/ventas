@@ -85,6 +85,13 @@ namespace BL.Rentas
                 resultado.Exitoso = false;
             }
 
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un Tipo";
+                resultado.Exitoso = false;
+            }
+
+
             return resultado;
         }
     }
@@ -94,8 +101,12 @@ namespace BL.Rentas
         public string Descripcion { get; set; }
         public double Precio { get; set; }
         public int Existencia { get; set; }
+        public int TipoId { get; set; }
+        public Tipo Tipo { get; set; }
         public byte[] Foto { get; set; }
         public bool Activo { get; set; }
+
+      
     }
     public class Resultado
     {
