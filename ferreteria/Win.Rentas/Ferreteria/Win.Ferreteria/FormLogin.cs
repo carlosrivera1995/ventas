@@ -50,6 +50,8 @@ namespace Win.Ferreteria
             {
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
+            button1.Enabled = true;
+            button1.Text = "Aceptar";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

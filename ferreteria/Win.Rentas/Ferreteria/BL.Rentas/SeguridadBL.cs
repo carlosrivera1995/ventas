@@ -9,12 +9,13 @@ namespace BL.Rentas
     public class SeguridadBL
     {
         Contexto _contexto;
+
         public SeguridadBL()
         {
             _contexto = new Contexto();
         }
 
-       public bool Autorizar(string usuario, string contrasena)
+        public bool Autorizar(string usuario, string contrasena)
         {
             var usuarios = _contexto.Usuarios.ToList();
 
@@ -25,12 +26,11 @@ namespace BL.Rentas
                     return true;
                 }
             }
-          
-                    return false;
-                }
-            }
 
-     
+            return false;
+        }
+    }
+
     public class Usuario
     {
         public int Id { get; set; }
@@ -38,4 +38,3 @@ namespace BL.Rentas
         public string Contrasena { get; set; }
     }
 }
-

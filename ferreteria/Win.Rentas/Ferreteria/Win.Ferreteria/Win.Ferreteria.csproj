@@ -63,6 +63,12 @@
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,10 +123,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.Rentas.Cliente.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ClientesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Contexto.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.DatosdeInicio.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Resultado.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Tipo.datasource" />
     <None Include="Properties\DataSources\BL.Rentas.TiposBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
