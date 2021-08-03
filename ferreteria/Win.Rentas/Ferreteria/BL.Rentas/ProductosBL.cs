@@ -30,6 +30,18 @@ namespace BL.Rentas
                 
         }
 
+        public BindingList<Producto> ObtenerProductos(string buscar)
+        {
+            var query = _contexto.Productos
+                .Where(producto => producto.Descripcion.ToLower().Contains(buscar)).ToList();
+
+            ListaProductos = new BindingList<Producto>(query);
+
+            return ListaProductos;
+
+        }
+
+
         public Resultado GuardarProducto (Producto producto)
         {
             var resultado = Validar(producto);

@@ -15,19 +15,19 @@ namespace BL.Rentas
             _contexto = new Contexto();
         }
 
-        public bool Autorizar(string usuario, string contrasena)
+        public Usuario Autorizar(string nombreusuario, string contrasena)
         {
             var usuarios = _contexto.Usuarios.ToList();
 
             foreach (var usuarioDB in usuarios)
             {
-                if (usuario == usuarioDB.Nombre && contrasena == usuarioDB.Contrasena)
+                if (nombreusuario == usuarioDB.Nombre && contrasena == usuarioDB.Contrasena)
                 {
-                    return true;
+                    return usuarioDB;
                 }
             }
 
-            return false;
+            return null;
         }
     }
 

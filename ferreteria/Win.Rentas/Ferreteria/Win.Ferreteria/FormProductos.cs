@@ -143,5 +143,13 @@ namespace Win.Ferreteria
         {
             fotoPictureBox.Image = null;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var busqueda = textBox1.Text;
+                
+               
+            listaProductosBindingSource.DataSource = _productos.ObtenerProductos(busqueda);
+        }
     }
 }
